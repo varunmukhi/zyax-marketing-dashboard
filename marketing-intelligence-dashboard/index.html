@@ -2690,95 +2690,74 @@ if(typeof init30dCharts==='function'){
 </div>
 
 <div class="sec" id="sec-vetro-spend">
-<div class="wrap">
-<h2 style="margin:0 0 6px;font-size:1.25rem;font-weight:700;color:var(--text)">📊 VetroPower Spend Analysis <span style="font-size:.75rem;font-weight:500;color:var(--muted);margin-left:8px">Meta Ads · Service Campaigns · Mar–Aug 2026</span></h2>
-<p style="color:var(--muted);font-size:.85rem;margin:0 0 20px">6-month breakdown of ad spend, clicks, CPC and CTR across all VP campaigns. Aug 2026 is a partial month.</p>
-
-<div class="kpis">
-  <div class="kpi"><div class="kpi-icon">💸</div><div class="kpi-label">Total Spend (6M)</div><div class="kpi-val">₹4.15L</div><div class="kpi-sub">Mar – Aug 2026</div></div>
-  <div class="kpi"><div class="kpi-icon">👆</div><div class="kpi-label">Total Clicks</div><div class="kpi-val">21,095</div><div class="kpi-sub">all campaigns</div></div>
-  <div class="kpi" style="border-color:#f59e0b"><div class="kpi-icon">💰</div><div class="kpi-label">Avg CPC</div><div class="kpi-val" style="color:#f59e0b">₹19.69</div><div class="kpi-sub">↑ rising over 6M</div></div>
-  <div class="kpi" style="border-color:#10b981"><div class="kpi-icon">📈</div><div class="kpi-label">Avg CTR</div><div class="kpi-val" style="color:#10b981">0.89%</div><div class="kpi-sub">↑ improved from 0.71%</div></div>
-  <div class="kpi"><div class="kpi-icon">👁️</div><div class="kpi-label">Total Impressions</div><div class="kpi-val">2.44M</div><div class="kpi-sub">reach ~2.08M unique</div></div>
-  <div class="kpi"><div class="kpi-icon">📣</div><div class="kpi-label">Active Campaigns</div><div class="kpi-val">12</div><div class="kpi-sub">across 5 cities</div></div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+  <div>
+    <h2 style="margin:0;font-size:1.15rem;font-weight:700;color:var(--text)">VetroPower Spend Analysis</h2>
+    <p style="margin:4px 0 0;font-size:.8rem;color:var(--muted)">All VP campaigns run with <strong>OUTCOME_ENGAGEMENT · Messaging objective</strong> &nbsp;·&nbsp; Mar 2026 – Sep 2026</p>
+  </div>
 </div>
-
-<!-- Monthly spend bar chart -->
-<div class="card" style="margin-bottom:16px">
-  <div class="ct" style="font-weight:600;font-size:.95rem;margin-bottom:4px">Monthly Spend &amp; Clicks</div>
-  <div class="cs" style="color:var(--muted);font-size:.82rem;margin-bottom:14px">Total Meta Ads spend per month — all VP service campaigns</div>
-  <div style="height:200px;position:relative"><canvas id="vetro-spend-monthly"></canvas></div>
+<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:.8rem;color:#166534">
+  <strong>Campaign Structure:</strong> 10 of 12 active campaigns → <code>MESSAGING_INSTAGRAM_DIRECT_WHATSAPP</code> or <code>INSTAGRAM_DIRECT</code> &nbsp;·&nbsp; 1 campaign (Sales May 25) → <code>OUTCOME_SALES</code> (website) &nbsp;·&nbsp; 1 campaign (Service Architects) → awareness only
 </div>
-
-<!-- CPC / CTR trend -->
-<div class="card" style="margin-bottom:16px">
-  <div class="ct" style="font-weight:600;font-size:.95rem;margin-bottom:4px">CPC &amp; CTR Trend</div>
-  <div class="cs" style="color:var(--muted);font-size:.82rem;margin-bottom:14px">CPC rising (auction pressure) while CTR improves — targeting is sharpening</div>
-  <div style="height:180px;position:relative"><canvas id="vetro-spend-cpc"></canvas></div>
+<div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px">
+  <div class="kpi"><div class="kpi-label">Total Spend</div><div class="kpi-value" style="font-size:1.4rem">₹4.35L</div><div class="kpi-sub">Mar–Sep 2026</div></div>
+  <div class="kpi"><div class="kpi-label">Messages Started</div><div class="kpi-value" style="font-size:1.4rem;color:var(--green)">4,143</div><div class="kpi-sub">excl. website campaign</div></div>
+  <div class="kpi"><div class="kpi-label">Avg Cost/Message</div><div class="kpi-value" style="font-size:1.4rem;color:var(--accent)">₹105</div><div class="kpi-sub">portfolio avg</div></div>
+  <div class="kpi"><div class="kpi-label">Best CPM</div><div class="kpi-value" style="font-size:1.4rem;color:var(--green)">₹43</div><div class="kpi-sub">Delhi Archived</div></div>
+  <div class="kpi"><div class="kpi-label">Worst CPM</div><div class="kpi-value" style="font-size:1.4rem;color:var(--red)">₹839</div><div class="kpi-sub">Flame Retardant</div></div>
+  <div class="kpi"><div class="kpi-label">Total Impressions</div><div class="kpi-value" style="font-size:1.4rem">2.75M</div><div class="kpi-sub">across all campaigns</div></div>
 </div>
-
-<!-- Campaign table -->
-<div class="card">
-  <div class="ct" style="font-weight:600;font-size:.95rem;margin-bottom:14px">Campaign Breakdown — 6-Month Totals</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+  <div class="card"><div class="cs">Monthly Spend vs Messages Started</div><div class="ct"><canvas id="vetro-spend-monthly"></canvas></div></div>
+  <div class="card"><div class="cs">Cost per Message Trend (₹)</div><div class="ct"><canvas id="vetro-spend-cpc"></canvas></div></div>
+</div>
+<div class="card" style="margin-bottom:20px">
+  <div class="cs">Campaign Performance (Mar–Sep 2026)</div>
   <div style="overflow-x:auto">
   <table style="width:100%;border-collapse:collapse;font-size:.82rem">
-    <thead>
-      <tr style="border-bottom:1px solid var(--border)">
-        <th style="text-align:left;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Campaign</th>
-        <th style="text-align:right;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Spend</th>
-        <th style="text-align:right;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Clicks</th>
-        <th style="text-align:right;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">CPC</th>
-        <th style="text-align:right;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">CTR</th>
-        <th style="text-align:right;padding:8px 10px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">% Budget</th>
-      </tr>
-    </thead>
+    <thead><tr style="border-bottom:2px solid var(--border)">
+      <th style="text-align:left;padding:8px 10px;color:var(--muted);font-weight:600">Campaign</th>
+      <th style="text-align:left;padding:8px 10px;color:var(--muted);font-weight:600">Destination</th>
+      <th style="text-align:right;padding:8px 10px;color:var(--muted);font-weight:600">Spend</th>
+      <th style="text-align:right;padding:8px 10px;color:var(--muted);font-weight:600">Messages</th>
+      <th style="text-align:right;padding:8px 10px;color:var(--muted);font-weight:600">Cost/Msg</th>
+      <th style="text-align:right;padding:8px 10px;color:var(--muted);font-weight:600">Impressions</th>
+    </tr></thead>
     <tbody>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Mumbai</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹1,06,042</td><td style="text-align:right;padding:9px 10px">3,134</td><td style="text-align:right;padding:9px 10px;color:#ef4444;font-weight:600">₹33.84</td><td style="text-align:right;padding:9px 10px">0.61%</td><td style="text-align:right;padding:9px 10px">25.6%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Glass Service — Mumbai</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹70,131</td><td style="text-align:right;padding:9px 10px">4,111</td><td style="text-align:right;padding:9px 10px;color:#10b981;font-weight:600">₹17.06</td><td style="text-align:right;padding:9px 10px">1.06%</td><td style="text-align:right;padding:9px 10px">16.9%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Mumbai (LA)</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹61,693</td><td style="text-align:right;padding:9px 10px">2,303</td><td style="text-align:right;padding:9px 10px;color:#f59e0b;font-weight:600">₹26.79</td><td style="text-align:right;padding:9px 10px">1.10%</td><td style="text-align:right;padding:9px 10px">14.9%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Pune</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹47,409</td><td style="text-align:right;padding:9px 10px">2,568</td><td style="text-align:right;padding:9px 10px;color:#10b981;font-weight:600">₹18.46</td><td style="text-align:right;padding:9px 10px">0.75%</td><td style="text-align:right;padding:9px 10px">11.4%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Delhi <span style="font-size:.72rem;background:#fee2e2;color:#991b1b;padding:1px 5px;border-radius:4px;margin-left:4px">Archived</span></td><td style="text-align:right;padding:9px 10px;font-weight:700">₹45,403</td><td style="text-align:right;padding:9px 10px">5,221</td><td style="text-align:right;padding:9px 10px;color:#10b981;font-weight:600">₹8.70</td><td style="text-align:right;padding:9px 10px">0.92%</td><td style="text-align:right;padding:9px 10px">10.9%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Bangalore</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹22,574</td><td style="text-align:right;padding:9px 10px">949</td><td style="text-align:right;padding:9px 10px;color:#f59e0b;font-weight:600">₹23.79</td><td style="text-align:right;padding:9px 10px">1.01%</td><td style="text-align:right;padding:9px 10px">5.4%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Hyderabad</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹22,374</td><td style="text-align:right;padding:9px 10px">923</td><td style="text-align:right;padding:9px 10px;color:#f59e0b;font-weight:600">₹24.24</td><td style="text-align:right;padding:9px 10px">1.07%</td><td style="text-align:right;padding:9px 10px">5.4%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Sales — May 25</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹11,897</td><td style="text-align:right;padding:9px 10px">563</td><td style="text-align:right;padding:9px 10px;color:#f59e0b;font-weight:600">₹21.13</td><td style="text-align:right;padding:9px 10px">1.53%</td><td style="text-align:right;padding:9px 10px">2.9%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Flame Retardant — Mumbai</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹9,228</td><td style="text-align:right;padding:9px 10px">120</td><td style="text-align:right;padding:9px 10px;color:#ef4444;font-weight:600">₹76.90</td><td style="text-align:right;padding:9px 10px">0.86%</td><td style="text-align:right;padding:9px 10px">2.2%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Anti Slip — Mumbai</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹8,616</td><td style="text-align:right;padding:9px 10px">796</td><td style="text-align:right;padding:9px 10px;color:#10b981;font-weight:600">₹10.82</td><td style="text-align:right;padding:9px 10px">1.61%</td><td style="text-align:right;padding:9px 10px">2.1%</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px;font-weight:500">Fabric Service — Delhi (New)</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹7,729</td><td style="text-align:right;padding:9px 10px">310</td><td style="text-align:right;padding:9px 10px;color:#f59e0b;font-weight:600">₹24.93</td><td style="text-align:right;padding:9px 10px">0.89%</td><td style="text-align:right;padding:9px 10px">1.9%</td></tr>
-      <tr><td style="padding:9px 10px;font-weight:500">Service — Architects</td><td style="text-align:right;padding:9px 10px;font-weight:700">₹1,742</td><td style="text-align:right;padding:9px 10px">97</td><td style="text-align:right;padding:9px 10px;color:#10b981;font-weight:600">₹17.96</td><td style="text-align:right;padding:9px 10px">1.41%</td><td style="text-align:right;padding:9px 10px">0.4%</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Mumbai</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹1,12,256</td><td style="text-align:right;padding:8px 10px">617</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--red);font-weight:600">₹182</span></td><td style="text-align:right;padding:8px 10px">4,28,664</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Glass Service - Mumbai</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹75,710</td><td style="text-align:right;padding:8px 10px">1,132</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--green);font-weight:600">₹67</span></td><td style="text-align:right;padding:8px 10px">3,07,742</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Mumbai – LA</td><td style="padding:8px 10px"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 6px;font-size:.75rem">IG DM only</span></td><td style="text-align:right;padding:8px 10px">₹61,693</td><td style="text-align:right;padding:8px 10px">447</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--amber);font-weight:600">₹138</span></td><td style="text-align:right;padding:8px 10px">1,70,719</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Pune</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹49,390</td><td style="text-align:right;padding:8px 10px">412</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--amber);font-weight:600">₹120</span></td><td style="text-align:right;padding:8px 10px">6,33,708</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Delhi - Archived</td><td style="padding:8px 10px"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 6px;font-size:.75rem">IG DM only</span></td><td style="text-align:right;padding:8px 10px">₹45,403</td><td style="text-align:right;padding:8px 10px">1,062</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--green);font-weight:600">₹43</span></td><td style="text-align:right;padding:8px 10px">7,14,351</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Bangalore</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹24,671</td><td style="text-align:right;padding:8px 10px">181</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--amber);font-weight:600">₹136</span></td><td style="text-align:right;padding:8px 10px">1,23,589</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Hyderabad</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹24,445</td><td style="text-align:right;padding:8px 10px">125</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--red);font-weight:600">₹196</span></td><td style="text-align:right;padding:8px 10px">1,58,058</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Sales - May 25</td><td style="padding:8px 10px"><span style="background:#f3f4f6;color:#374151;border-radius:4px;padding:2px 6px;font-size:.75rem">Website</span></td><td style="text-align:right;padding:8px 10px">₹11,897</td><td style="text-align:right;padding:8px 10px">—</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--muted)">N/A</span></td><td style="text-align:right;padding:8px 10px">32,850</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Fabric Service - Delhi</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹9,822</td><td style="text-align:right;padding:8px 10px">63</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--red);font-weight:600">₹156</span></td><td style="text-align:right;padding:8px 10px">55,511</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Flame Retardant Service - Mumbai</td><td style="padding:8px 10px"><span style="background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 6px;font-size:.75rem">WA+IG DM</span></td><td style="text-align:right;padding:8px 10px">₹9,228</td><td style="text-align:right;padding:8px 10px">11</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--red);font-weight:600">₹839</span></td><td style="text-align:right;padding:8px 10px">13,543</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px">VP - Anti Slip - Mumbai</td><td style="padding:8px 10px"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 6px;font-size:.75rem">IG DM only</span></td><td style="text-align:right;padding:8px 10px">₹8,616</td><td style="text-align:right;padding:8px 10px">90</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--green);font-weight:600">₹96</span></td><td style="text-align:right;padding:8px 10px">48,242</td></tr>
+      <tr><td style="padding:8px 10px">VP - Service - Architects</td><td style="padding:8px 10px"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 6px;font-size:.75rem">IG DM only</span></td><td style="text-align:right;padding:8px 10px">₹1,742</td><td style="text-align:right;padding:8px 10px">3</td><td style="text-align:right;padding:8px 10px"><span style="color:var(--muted)">N/A</span></td><td style="text-align:right;padding:8px 10px">58,684</td></tr>
     </tbody>
-    <tfoot>
-      <tr style="background:var(--surface2);border-top:2px solid var(--border)">
-        <td style="padding:10px 10px;font-weight:700">TOTAL</td>
-        <td style="text-align:right;padding:10px 10px;font-weight:700">₹4,14,838</td>
-        <td style="text-align:right;padding:10px 10px;font-weight:700">21,095</td>
-        <td style="text-align:right;padding:10px 10px;font-weight:700">₹19.69</td>
-        <td style="text-align:right;padding:10px 10px;font-weight:700">0.89%</td>
-        <td style="text-align:right;padding:10px 10px;font-weight:700">100%</td>
-      </tr>
-    </tfoot>
   </table>
   </div>
 </div>
-
-<!-- Key insights -->
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px">
-  <div style="background:var(--surface);border-left:3px solid #10b981;border-radius:0 8px 8px 0;padding:12px 14px;font-size:.82rem">
-    <div style="font-weight:700;margin-bottom:4px;color:var(--text)">📈 CTR Improving</div>
-    <span style="color:var(--muted)">Rose from 0.71% (Mar) → 1.24% (Jul), a +75% improvement. Audience targeting is sharpening.</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+  <div style="background:#f0fdf4;border-left:4px solid var(--green);border-radius:6px;padding:12px 14px">
+    <div style="font-size:.75rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.04em">🏆 Portfolio Winner</div>
+    <div style="font-size:.9rem;font-weight:600;color:var(--text);margin-top:4px">Glass Mumbai — ₹67/msg</div>
+    <div style="font-size:.78rem;color:var(--muted);margin-top:2px">1,132 messages at lowest active CPM. Proof the WA+IG DM setup works when creative fits product.</div>
   </div>
-  <div style="background:var(--surface);border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:12px 14px;font-size:.82rem">
-    <div style="font-weight:700;margin-bottom:4px;color:var(--text)">⚠️ CPC Rising</div>
-    <span style="color:var(--muted)">CPC climbed from ₹16.78 → ₹22.25 peak in Jun. Auction competition growing as budgets scale.</span>
+  <div style="background:#fff7ed;border-left:4px solid var(--amber);border-radius:6px;padding:12px 14px">
+    <div style="font-size:.75rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.04em">⚠️ Archived Best Performer</div>
+    <div style="font-size:.9rem;font-weight:600;color:var(--text);margin-top:4px">Delhi Archived — ₹43/msg</div>
+    <div style="font-size:.78rem;color:var(--muted);margin-top:2px">Best CPM in the portfolio at ₹43/msg with 1,062 messages. Why was this archived? Setup should be replicated for other cities.</div>
   </div>
-  <div style="background:var(--surface);border-left:3px solid #ef4444;border-radius:0 8px 8px 0;padding:12px 14px;font-size:.82rem">
-    <div style="font-weight:700;margin-bottom:4px;color:var(--text)">🔍 Fabric Mumbai CPC High</div>
-    <span style="color:var(--muted)">CPC at ₹33–42 — 2× portfolio avg. Needs creative refresh or audience reset. Glass Mumbai at ₹17 is best efficiency.</span>
+  <div style="background:#fef2f2;border-left:4px solid var(--red);border-radius:6px;padding:12px 14px">
+    <div style="font-size:.75rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.04em">🔴 Needs Audit</div>
+    <div style="font-size:.9rem;font-weight:600;color:var(--text);margin-top:4px">Fabric Mumbai — ₹182/msg · Hyderabad — ₹196/msg</div>
+    <div style="font-size:.78rem;color:var(--muted);margin-top:2px">Highest spend (₹1.12L) but worst messaging efficiency. Creative or audience targeting needs immediate review.</div>
   </div>
 </div>
-
 </div>
-</div>
-
 <script>(function(){
 window.showSec_vetro=function showSec_vetro(key,el){document.querySelectorAll("#ws-vetro .sec").forEach(function(s){s.classList.remove("active");});document.querySelectorAll("#snav-vetro .snav-item").forEach(function(s){s.classList.remove("active");});document.getElementById("sec-vetro-"+key).classList.add("active");el.classList.add("active");if(!window._ci_vetro){window._ci_vetro={};}if(!window._ci_vetro[key]){window._ci_vetro[key]=true;var fn=window["initChart_vetro_"+key];if(typeof fn==="function")setTimeout(fn,50);}}
 window.initChartsvetro=function(){
@@ -2790,10 +2769,16 @@ new Chart(document.getElementById("vetro-ov-ga4"),{type:"bar",data:{labels:['Jan
 }
 
 window.initChart_vetro_spend=function(){
-var mLabels=['Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26'];
-new Chart(document.getElementById('vetro-spend-monthly'),{type:'bar',data:{labels:mLabels,datasets:[{label:'Spend (₹)',data:[33619,56940,89352,99169,96999,38759],backgroundColor:'#a855f7cc',borderRadius:4,barPercentage:0.75,categoryPercentage:0.85,yAxisID:'y'},{label:'Clicks',data:[2003,3064,4835,4458,4614,2121],type:'line',borderColor:'#10b981',borderWidth:2,pointRadius:3,tension:.3,fill:false,yAxisID:'y1'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:'var(--muted)',boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+(c.datasetIndex===0?'₹':'')+c.parsed.y.toLocaleString();}}}},scales:{y:{beginAtZero:true,ticks:{color:'var(--muted)',callback:function(v){return'₹'+(v/1000).toFixed(0)+'K';}},grid:{color:'var(--border)'}},y1:{position:'right',beginAtZero:true,ticks:{color:'var(--muted)'},grid:{drawOnChartArea:false}},x:{ticks:{color:'var(--muted)'},grid:{color:'var(--border)'}}}}});
-new Chart(document.getElementById('vetro-spend-cpc'),{type:'line',data:{labels:mLabels,datasets:[{label:'CPC (₹)',data:[16.78,18.58,18.48,22.25,21.02,18.27],borderColor:'#a855f7',borderWidth:2,pointRadius:4,pointBackgroundColor:'#a855f7',tension:.3,fill:false,yAxisID:'y'},{label:'CTR (%)',data:[0.71,0.61,0.74,1.18,1.24,0.86],borderColor:'#10b981',borderWidth:2,pointRadius:4,pointBackgroundColor:'#10b981',tension:.3,fill:false,yAxisID:'y1'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:'var(--muted)',boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+(c.datasetIndex===0?'₹':'')+c.parsed.y.toFixed(2)+(c.datasetIndex===1?'%':'')+'';}}}},scales:{y:{beginAtZero:false,ticks:{color:'var(--muted)',callback:function(v){return'₹'+v.toFixed(0);}},grid:{color:'var(--border)'}},y1:{position:'right',beginAtZero:true,ticks:{color:'var(--muted)',callback:function(v){return v.toFixed(2)+'%';}},grid:{drawOnChartArea:false}},x:{ticks:{color:'var(--muted)'},grid:{color:'var(--border)'}}}}});
-};
+var mLabels=['Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26*'];
+new Chart(document.getElementById('vetro-spend-monthly'),{type:'bar',data:{labels:mLabels,
+  datasets:[
+    {label:'Spend (₹)',data:[33619,56940,89352,99169,96999,38759,20034],backgroundColor:'rgba(79,70,229,0.7)',borderRadius:4,yAxisID:'y'},
+    {label:'Messages Started',data:[319,520,978,945,851,382,154],type:'line',borderColor:'#10b981',backgroundColor:'rgba(16,185,129,0.1)',fill:true,tension:0.3,pointRadius:4,yAxisID:'y1'}
+  ]},options:{responsive:true,maintainAspectRatio:true,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{position:'left',ticks:{callback:v=>'₹'+v.toLocaleString('en-IN'),font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}},y1:{position:'right',ticks:{font:{size:10}},grid:{drawOnChartArea:false}}}}});
+new Chart(document.getElementById('vetro-spend-cpc'),{type:'line',data:{labels:mLabels,
+  datasets:[{label:'Cost per Message (₹)',data:[105,110,91,105,114,101,130],borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,0.1)',fill:true,tension:0.3,pointRadius:5,pointBackgroundColor:'#a855f7'}]},
+  options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{ticks:{callback:v=>'₹'+v,font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}},x:{ticks:{font:{size:10}}}}}});
+}
 window.initChart_vetro_gsc=function(){new Chart(document.getElementById("vetro-gsc-main"),{type:"bar",data:{labels:['May 25', 'Jun 25', 'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26', 'Jun 26', 'Jul 26', 'Aug 26'],datasets:[{label:"Clicks",data:[928, 946, 986, 836, 800, 867, 666, 713, 736, 707, 723, 774, 753, 851, 963, 560],backgroundColor:"#8b5cf6cc",borderRadius:4,barPercentage:0.85,categoryPercentage:0.9,yAxisID:"y"},{label:"Impressions",data:[96419, 105102, 110337, 101477, 84830, 91586, 77153, 80312, 96266, 96523, 97987, 91590, 81275, 105655, 123291, 70662],type:"line",borderColor:"#94a3b8",borderWidth:1.5,pointRadius:2,tension:.3,fill:false,yAxisID:"y1"}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:"var(--muted)",boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toLocaleString();}}}},scales:{y:{beginAtZero:true,ticks:{color:"var(--muted)"},grid:{color:"var(--border)"}},y1:{position:"right",beginAtZero:true,ticks:{color:"var(--muted)"},grid:{drawOnChartArea:false}},x:{ticks:{color:"var(--muted)",maxRotation:45},grid:{color:"var(--border)"}}}}}); 
 }
 window.initChart_vetro_ga4=function(){new Chart(document.getElementById("vetro-ga4-main"),{type:"bar",data:{labels:['Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25', 'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26', 'Jun 26', 'Jul 26', 'Aug 26'],datasets:[{label:"Users",data:[2319, 1553, 1440, 1495, 1789, 2000, 2251, 2348, 1988, 2034, 2494, 1987, 1823, 1670, 1978, 1852, 2003, 1968, 1779, 1777],backgroundColor:"#8b5cf6cc",borderRadius:4,barPercentage:0.85,categoryPercentage:0.9,yAxisID:"y"},{label:"Sessions",data:[3038, 2038, 1935, 1944, 2324, 2530, 2995, 3019, 2526, 2496, 2805, 2319, 2205, 2065, 2368, 2327, 2365, 2366, 2237, 2086],type:"line",borderColor:"#8b5cf6",borderWidth:1.5,pointRadius:2,tension:.3,fill:false,yAxisID:"y1"}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:"var(--muted)",boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toLocaleString();}}}},scales:{y:{beginAtZero:true,ticks:{color:"var(--muted)"},grid:{color:"var(--border)"}},y1:{position:"right",beginAtZero:true,ticks:{color:"var(--muted)"},grid:{drawOnChartArea:false}},x:{ticks:{color:"var(--muted)",maxRotation:45},grid:{color:"var(--border)"}}}}}); 
